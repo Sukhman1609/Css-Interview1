@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">DAY-1</h1>
+    <h1>1.Explain CSS box model</h1>
+    <p>The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.The box model in CSS is a  set of rules that determine how your web page is
+        rendered on the internet. In this model, a rectangular box is generated for HTML
+        elements. This box consists of first content, then padding, then border, and finally
+        margin.
+         The image below illustrates the box model:</p>
+    <img src="CSS-Box-Model.webp" width="300px" height="300px">
+    <pre>Explanation of the different parts:
+        Content - The content of the box, where text and images appear
+        Padding - Clears an area around the content. The padding is transparent
+        Border - A border that goes around the padding and content
+        Margin - Clears an area outside the border. The margin is transparent
+        The box model allows us to add a border around elements, and to define space between elements. </pre>
+        <hr>
+
+        <h1>2.What is box sizing?</h1>
+        <p>Box-sizing property defines how the width and height gets applied on an element.
+            Default value of box-sizing is content-box, in this case the actual width of the box
+            will be equal to the border and padding and width of the box ( Actual width : width
+            + border + padding ).
+            In case when box-sizing is set to be border-box, then the actual width will be equal
+            to the width of the box itself. Means if we will increase the padding or border of
+            the box then it will not increase the width of the box.</p>
+            <ol start="a" style="font-size: 18pt;">
+                <li>content-box (Default)</li>
+                <li>border-box</li>
+            </ol>
+<!-- HTML:- -->
+<div class="abc content-box">Content box</div>
+<br>
+<div class="abc border-box">Border box</div>
+<hr>
+
+<h1>3.Explain inline , internal and external stylesheet?</h1>
+<pre>In CSS, we have 3 different ways of writing styles for HTML elements:
+    o Inline
+    o Internal
+    o External
+    Inline styling gets applied directly to the element in the style attribute. This styling
+    is having the highest priority among all. But it is not advised to use this styling
+    much in projects.</pre>
+    <h1 style="color: green; text-align:center;">Heading One</h1>
+    <p style="color: blue;">This is a paragraph</p>
+    <p>Internal styling gets written in the head tag of the HTML file. It will be written in
+        the style tag. The styling written in style tag will be applicable only in that HTML
+        file.</p>
+        <head>
+            <style>
+            .haed {
+            color: maroon;
+            margin-left: 40px;
+            }
+            .para{
+            color: maroon;
+            }
+            </style>
+            </head>
+            </head>
+            <body>
+            <h1 class="haed">First Heading</h1>
+            <p class="para">This is a paragraph</p>
+            </body>
+            <p>External Styling is done by creating a different CSS file with .css extension. This
+                file can be linked to any HTML file wherever the styling is required. The external
+                CSS file can be attached to the HTML file in the head tag in the link tag. This
+                styling is having the least priority but it is the most advised way of writing styling
+                in projects.</p>
+                <head>
+                    <title>Document</title>
+                    <link rel="stylesheet" href="mystyle.css">
+                    </head>
+                    <body>
+                    <h2>This is a heading</h2>
+                    <h3>This is a paragraph.</h3>
+                    <hr>
+
+        <h1>4.What is the difference between padding and margin?</h1> 
+        <p>These two properties are CSS properties that provide space or gap. Both margin
+            and padding targets the four sides of an element.</p>
+            <center> 
+            <table border="1px solid grey" style="width: 60%;">
+                <tr>
+                    <th>MARGIN</th>
+                    <th>PADDING</th>
+                </tr>
+                <tr>
+                    <td>Margin provides the space
+                        between the border and nearby
+                        elements. It is the space outside
+                        the border.</td>
+                        <td>Padding provides the space
+                            between the border and the
+                            content of an element. It is the
+                            space inside the border.</td>
+                </tr>
+                <tr>
+                    <td>You can set margin values to be
+                        negative if you want elements to
+                        overlap.</td>
+                        <td>Padding values can only be
+                            positive.</td>
+                </tr>
+                <tr>
+                    <td>When you set margin values, the
+                        element's size does not change,
+                        only the space around it.</td>
+                        <td>When you set padding values, the
+                            size of that element increases.</td>
+                </tr>
+            </table>         
+        </center>
+        <p>See the below image:</p>
+        <img  src="images.png" width="500px" height="300px"><hr>
+        
+        <h1>5.Difference between absolute and relative positioning</h1>
+        <pre>position: relative
+            ● It is used when we need to position the HTML element relative to its normal
+            position.
+            ● We can set top, right, bottom and left properties that will cause the element
+            to adjust away from the normal position.
+        OUTPUT:
+        </pre>
+            <div class="box" id="box1"></div>
+            <div class="box" id="box2"></div>
+            <div class="box" id="box3"></div>
+            <div class="box" id="box4"></div>
+        <pre>position: absolute
+            ● An element with position absolute will move according to the position of its
+            parent element.
+            ● In the absence of the parent element, the HTML element will be placed
+            according to the body tag. In this case if you want to place the element at
+            any position based on the parent element then we need to give the position :
+            relative to parent element and then position : absolute to child element.
+        OUTPUT:
+        </pre>
+        <div class="parent">
+        <div class="box1" id="box5"></div>
+        <div class="box1" id="box6"></div>
+        <div class="box1" id="box7"></div>
+        <div class="box1" id="box8"></div>
+    </div> <br><br>
+    <hr>
+    <h1>6.What is the difference between display none and visibility hidden?</h1> 
+    <pre>display: none;
+        ● The display: none property is used to hide elements without deleting them. It
+        does not take up any space.
+        ● In this case, the tag is removed from the page, which allows other elements
+        to fill in.
+
+        visibility: hidden;
+        ● The visibility: hidden property also hides an element, but affects the layout
+        i.e., it takes up the space.
+        ● The element is hidden from view but not the page flow.</pre>
+        <hr>
+        <h1>7.Create a circle using border radius </h1>
+        <p>If we give equal height and width to a box and give 50% to its border-radius. Then
+            we can achieve a circle.</p>
+        <p>OUTPUT:</p>
+        <div class="circle"></div>
+        <hr>
+
+        <h1>8.Difference between flex row and column</h1>
+        <p>This is a CSS property based on the concept of the flexbox. Flex-direction property
+            can be applied to the parent elements and then the child elements of this parent tag
+            will be placed accordingly.
+            The difference is when we apply flex-direction : row, child elements will be placed
+            one after another in the same row (horizontally) and then the row or x-axis will be
+            considered as the main axis, in this case the y-axis will be known as cross axis.</p>
+            <p>OUTPUT:</p>
+            <div class="container">
+                <div class="flex-items"></div>
+                <div class="flex-items"></div>
+                <div class="flex-items"></div>
+                </div>
+            <p>On the other hand if we apply flex-direction : column places the child elements in
+                column(vertically) means every child element will be placed one after another in
+                the same column, and then the y-axis will be considered as the main axis and
+                x-axis will be known as cross axis.</p> 
+                <p>OUTPUT:</p>
+                <div class="container1">
+                    <div class="flex-items1"></div>
+                    <div class="flex-items1"></div>
+                    <div class="flex-items1"></div>
+                    </div>
+                    <hr>
+
+                    <h1>9.Justify-content allows you to do what?</h1> 
+                    <P>The justify-content property is a sub-property of the Flex-box Module.
+                        The justify-content property specifies how flex-items are distributed along the
+                        main axis of their parent flex-container. If the flex-direction of the parent container
+                        is row(default value) then the main axis will be the x-axis. If the flex-direction is a
+                        column then the main axis will be the y-axis. This property has 6 different possible
+                        values:</P>  
+                        <pre>
+                            · flex-start (default)
+                            · flex-end
+                            · center
+                            · space-around
+                            · space-between
+                            · space-evenly
+                            · stretch</pre>
+                            <img src="css-flex-justify-content-all-examples-reference.png"> <hr> 
+
+                            <h1>10.display inline, block, inline-block ?</h1>
+                            <p>display:inline</p>
+                            <p>display: inline means that the element is displayed inline, inside the current block on the same line.The display option of inline tells the element to fit itself on the same line. Since both paragraph elements use the inline display, they both sit on the same line with each other.One common use for display: inline-block is to display list items horizontally instead of vertically. </p>
+                                <div class="item">Lorem ipsum dolor sit amet.</div>
+                                <div class="item">Lorem ipsum dolor sit amet.</div>
+                                <div class="item">Lorem ipsum dolor sit amet.</div>
+                                <div class="item">Lorem ipsum dolor sit amet.</div>
+                            </div>
+                            <p>display:inline-block</p>
+                            <p>Compared to display: inline , the major difference is that display: inline-block allows to set a width and height on the element. Also, with display: inline-block , the top and bottom margins/paddings are respected, but with display: inline they are not.</p>
+                            <div class="item1">Lorem ipsum dolor sit amet.</div>
+                            <div class="item1">Lorem ipsum dolor sit amet.</div>
+                            <div class="item1">Lorem ipsum dolor sit amet.</div>
+                            <div class="item1">Lorem ipsum dolor sit amet.</div>
+                            <p>display:block</p>
+                            <p>display: block means that the element is displayed as a block, as paragraphs and headers have always been. A block has some whitespace above and below it and tolerates no HTML elements next to it, except when ordered otherwise.Displays an element as a block element (like p). It starts on a new line, and takes up the whole width.</p>
+                            <div class="item2">Lorem ipsum dolor sit amet.</div>
+                            <div class="item2">Lorem ipsum dolor sit amet.</div>
+                            <div class="item2">Lorem ipsum dolor sit amet.</div>
+                            <div class="item2">Lorem ipsum dolor sit amet.</div>
+                            <hr>
+
+                            <h1>11.position: sticky and fixed?</h1>
+                            <p>position: sticky</p>
+                            <p>It sets the element’s position related to the parent element.It becomes fixed only when the element reaches the offset while scrolling the parent element.It overrides the other elements when the element reaches the offset and becomes fixed.	Only modern browsers support it.It can be used to show sticky ads.</p>
+                          <h1 class="heading">CHAPTER1</h1>
+                          <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit modi deserunt saepe dignissimos consequuntur similique accusantium, asperiores ipsa veniam natus?</P>
+                          <h1 class="heading">CHAPTER2</h1>
+                          <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit modi deserunt saepe dignissimos consequuntur similique accusantium, asperiores ipsa veniam natus?</P>
+                            <p>position:fixed</p>
+                            <p>It sets the element position related to the HTML viewport.It remains always fixed even, if we scroll the document or not.It always overrides the other elements.All browsers support it.One of the use cases of the fixed position is to add social media icons in the sidebar.</p>
+                            <h1 class="fixed">CHAPTER1</h1>
+                          <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit modi deserunt saepe dignissimos consequuntur similique accusantium, asperiores ipsa veniam natus?</P>
+                          <h1 class="fixed">CHAPTER2</h1>
+                          <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit modi deserunt saepe dignissimos consequuntur similique accusantium, asperiores ipsa veniam natus?</P>
+                          <hr>
+                          <h1>12.justify-content :center and align-item :center?</h1>
+                          <p>The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).The justify-content property can also be used on a grid container to align grid items in the inline direction. For pages in English, inline direction is left to right and block direction is downward.</p>
+                          <pre>
+flex-start		
+flex-end		
+center	
+space-between		
+space-around		
+space-evenly	
+initial	
+inherit
+                          </pre>
+                          <div class="justify-content">
+                          <div class="justify">1</div>
+                          <div class="justify">2</div>
+                        </div>
+                        <p>The align-items property specifies the default alignment for items inside a flexbox or grid container.
+
+                            In a flexbox container, the flexbox items are aligned on the cross axis, which is vertical by default (opposite of flex-direction).
+                            In a grid container, the grid items are aligned in the block direction. For pages in English, block direction is downward and inline direction is left to right.
+                            For this property to have any alignment effect, the items need available space around themselves in the appropriate direction.</p>
+                            <pre>
+normal	Default	
+stretch	
+center	 
+flex-start	
+flex-end	
+start	
+end	
+baseline	
+initial	
+inherit
+                            </pre>
+                            <div class="align-item">
+                                <div class="align">1</div>
+                                <div class="align">2</div>
+                              </div>
+                              <hr>
+                              <h1>13.center one div</h1>
+                              <div class="center">
+                                <div class="c"></div>
+                                <div class="c d"></div>
+                                <div class="c"></div>
+                                <div class="c "></div>
+                              </div>
+                              <hr>
+                              <h1>14.display flex vd display grid</h1>
+                              <pre>Difference Between Grid and Flexbox:
+
+                                1. Dimensionality and Flexibility:
+                                
+                                Flexbox offers greater control over alignment and space distribution between items. Being one-dimensional, Flexbox only deals with either columns or rows.
+                                Grid has two-dimension layout capabilities which allow flexible widths as a unit of length. This compensates for the limitations in Flex.
+
+                                2. Alignment:
+                                
+                                Flex Direction allows developers to align elements vertically or horizontally, which is used when developers create and reverse rows or columns.
+                                CSS Grid deploys fractional measure units for grid fluidity and auto-keyword functionality to automatically adjust columns or rows.
+
+                                3. Item Management
+                                
+                                Flex Container is the parent element while Flex Item represents the children. The Flex Container can ensure balanced representation by adjusting item dimensions. This allows developers to design for fluctuating screen sizes.
+                                Grid supports both implicit and explicit content placement. Its inbuilt automation allows it to automatically extend line items and copy values into the new creation from the preceding item.</pre>
+                                <p>GRID:</p>
+                                <div class="grid">
+                                    <div class="g">1</div>
+                                    <div class="g">2</div>
+                                    <div class="g">3</div>
+                                    <div class="g">4</div>
+                                    <div class="g">5</div>
+                                    <div class="g">6</div>
+                                </div>
+                                <p>FLEX:</p>
+                                <div class="flex">
+                                    <div class="g">1</div>
+                                    <div class="g">2</div>
+                                    <div class="g">3</div>
+                                    <div class="g">4</div>
+                                    <div class="g">5</div>
+                                    <div class="g">6</div>
+                                </div>
+                                <hr>
+                               
+<h1>15.What is the z-index in CSS?</h1> 
+<p>The z-index property specifies the stack order of an element.
+
+    An element with greater stack order is always in front of an element with a lower stack order.The z-index property determines the stack level of an HTML element. The “stack
+    level” refers to the element’s position on the Z axis (as opposed to the X axis or Y
+    axis). Elements with a higher index will be placed on top of elements with a lower
+    index. If the z-index value of any element is positive then that element will be at
+    the top and element having negative value of z-index will be at the bottom.
+    Note :- z-index will only work on an element whose position property has been set
+    to absolute, relative and fixed.
+    
+    Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky) and flex items (elements that are direct children of display:flex elements).Z Index ( z-index ) is a CSS property that defines the order of overlapping HTML elements. Elements with a higher index will be placed on top of elements with a lower index.</p>
+    <div id="index1"></div>
+    <div id="index2"></div>  
+    <hr>
+    
+    
+
+
+</body>
+</html>
